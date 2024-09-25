@@ -143,6 +143,44 @@ func area(radio float64) float64 {
 	return Pi * radio * radio
 }
 
+func Funciones_que_regresan_múltiples_valores(radio float64) (area float64, perimetro float64) {
+    area = Pi * radio * radio
+    perimetro = 2 * Pi * radio
+    return area, perimetro
+}
+
+func Funciones_Variádicas(numeros ...int) int {
+    // el total inicial es 0
+    total := 0
+    // recorrer todos los numeros
+    for _, numero := range numeros {
+        // en cada iteración sumar al total el valor del numero
+        total = numero + total
+    }
+    // retornar el valor total
+    return total
+}
+
+func Recursividad(mensaje string, iteraciones uint) {
+    if iteraciones > 1 {
+		Recursividad(mensaje, iteraciones-1)
+    }
+    fmt.Println(mensaje, iteraciones)
+}
+
+func Funciones_como_argumentos(radio float64) (area func() float64, perimetro func() float64) {
+
+    area = func() float64 {
+        return 3.1416 * radio * radio
+    }
+
+    perimetro = func() float64 {
+        return 2 * 3.1416 * radio
+    }
+
+    return
+}
+
 func main() {
 	// fmt.Println("Texto en la funcion main")
 	// imprimir()
@@ -158,8 +196,28 @@ func main() {
 	// declaracion_corta_variables()
 	// Scope()
 	// Uso_punteros()
+
 	// fmt.Println("La altura es:", altura, "mts")
 	// fmt.Println("Al envejecer:", Valor_vs_Referencia(altura), "mts")
 	// fmt.Println("Despues de envejecer:", altura, "mts")
+
 	// fmt.Println("El area de un circulo cuyo radio es 3 es: ", area(3))
+
+	// a, p := Funciones_que_regresan_múltiples_valores(8)
+    // fmt.Println("El area del circulo es: ", a)
+    // fmt.Println("El perimetro del circulo es: ", p)
+
+	// fmt.Println(Funciones_Variádicas(2))
+    // fmt.Println(Funciones_Variádicas(2, 2))
+    // fmt.Println(Funciones_Variádicas(5, 4, 3))
+	
+	// var i uint
+	// fmt.Print("canidad de iteraciones: ")
+	// fmt.Scan(&i)
+	// Recursividad("yodelayheehoo", i)
+	Recursividad("yodelayheehoo", 5)
+
+	// area, perimetro := Funciones_como_argumentos(10)
+	// fmt.Println("El area del circulo es", area())
+	// fmt.Println("El perimetro del circulo es", perimetro())
 }
