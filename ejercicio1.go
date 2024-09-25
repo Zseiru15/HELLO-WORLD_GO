@@ -181,6 +181,36 @@ func Funciones_como_argumentos(radio float64) (area func() float64, perimetro fu
     return
 }
 
+func Else_if() {
+    var juguete string
+    fmt.Println("Elige persona, animal o cosa: ")
+    fmt.Scanln(&juguete)
+    if juguete == "persona" {
+        fmt.Println("El objeto es una persona")
+    } else if juguete == "cosa" {
+        fmt.Println("El objeto es una cosa")
+    } else if juguete == "animal" {
+        fmt.Println("El objeto es un animal")
+    } else {
+        fmt.Println("El objeto es otra categoria")
+    }
+}
+
+func Division_Residuo() {
+	var i, j, x int
+	fmt.Print("Ingrese los numeros: \n")
+	fmt.Scan(&i, &j)
+	fmt.Println("Tus numeros son:", i, "y", j)
+	fmt.Println("La division es:", i/j)
+	fmt.Println("El residuo es:", i%j)
+	x=i%j
+	if x%2==0{
+		fmt.Println("El numero es par")
+	}else {
+		fmt.Println("El numero es impar")
+	}
+}
+
 func main() {
 	// fmt.Println("Texto en la funcion main")
 	// imprimir()
@@ -215,9 +245,13 @@ func main() {
 	// fmt.Print("canidad de iteraciones: ")
 	// fmt.Scan(&i)
 	// Recursividad("yodelayheehoo", i)
-	Recursividad("yodelayheehoo", 5)
+	// Recursividad("yodelayheehoo", 5)
 
 	// area, perimetro := Funciones_como_argumentos(10)
 	// fmt.Println("El area del circulo es", area())
 	// fmt.Println("El perimetro del circulo es", perimetro())
+
+	// Else_if()
+
+	Division_Residuo()
 }
